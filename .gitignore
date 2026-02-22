@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.db
+database/
+nohup.out
+output.log
+.env
