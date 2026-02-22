@@ -102,7 +102,8 @@ How Memory Works
 
 Author
 
-Nitu
+Nitisha Naigaonkar | Innomatics Intern
+
 
 
 
