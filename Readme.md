@@ -1,109 +1,83 @@
-# Career Salakar – AI-Powered Career Guidance Assistant
+# Career Salakar – AI-Powered Career Strategy Assistant
 
-Career Salakar is an interactive AI-based career guidance chatbot built using Streamlit and Google Gemini API. It helps users explore career paths, clarify confusion, and receive structured guidance through conversational memory and contextual prompts.
+## Overview
+Career Salakar is an AI-driven career guidance assistant built using Streamlit and Google Gemini 2.5 Flash.
+It helps users explore career decisions through structured reflection, guided questioning, and conversational interaction.
 
-Features
+The application is deployed on AWS EC2 and supports session-based conversation memory using SQLite.
 
-•	Conversational AI powered by Google Gemini
+---
 
-•	Session-based memory (multi-turn chat)
+## Tech Stack
+- Python 3.9+
+- Streamlit
+- Google Gemini 2.5 Flash API
+- SQLite (conversation storage)
+- AWS EC2 (deployment)
+- Git & GitHub (version control)
 
-•	Structured prompt engineering for career clarity
+---
 
-•	Clear session functionality
+## Features
+- Interactive AI-powered career guidance
+- Structured prompt engineering
+- Persistent chat memory using SQLite
+- Minimal and clean Streamlit UI
+- Cloud deployment on AWS EC2
+- Secure API key handling via environment variables
 
-•	Clean dark UI built with Streamlit
+---
 
-•	Secure API key handling using environment variables
+## Project Structure
 
-Tech Stack
-
-•	Python 3.11+
-
-•	Streamlit
-
-•	Google Gemini API
-
-•	python-dotenv
-
-•	SQLite (for session memory)
-
-Project Structure
-
-career\_salakar/
-
+career-salakar/
 │
-
 ├── app.py
-
-├── backend/
-
-│   ├── memory.py
-
-│   ├── prompt\_builder.py
-
-│   └── gemini\_client.py
-
 ├── requirements.txt
+├── README.md
+├── .env.example
+│
+└── backend/
+    ├── config.py
+    ├── gemini_client.py
+    ├── memory.py
+    └── prompt_builder.py
 
-└── README.md
+---
 
+## How to Run Locally
 
+1. Clone the repository:
+   git clone https://github.com/Nitisha-N/career-salakar.git
+   cd career-salakar
 
-Note: .env file is intentionally excluded for security reasons.
+2. Create virtual environment:
+   python -m venv venv
+   source venv/bin/activate
 
-Setup Instructions
+3. Install dependencies:
+   pip install -r requirements.txt
 
-1\. Install Dependencies
+4. Set your API key:
+   export GOOGLE_API_KEY=your_api_key_here
 
-pip install -r requirements.txt
+5. Run the application:
+   streamlit run app.py
 
-2\. Create Environment Variable
+---
 
-Create a .env file in the root directory and add:
+## Deployment
 
+The application is deployed on AWS EC2 using:
+- nohup for background execution
+- Public binding (0.0.0.0)
+- Streamlit server configuration
 
+Live URL:
+http://13.60.98.146:8501
 
-GOOGLE\_API\_KEY=your\_google\_api\_key\_here
+---
 
-
-
-Important:
-
-\- Do NOT add quotes
-
-\- Do NOT commit the .env file
-
-\- Keep your API key private
-
-3\. Run the Application
-
-streamlit run app.py
-
-App runs at: http://localhost:8501
-
-Deployment (Streamlit)
-
-Set the GOOGLE\_API\_KEY as an environment variable on the deployment platform. Do NOT upload the .env file. Ensure requirements.txt is included.
-
-Model Used
-
-Google Gemini (e.g., gemini-2.5-flash or gemini-1.5-flash) for dynamic greeting generation and contextual career guidance.
-
-How Memory Works
-
-•	Each session generates a unique user\_id
-
-•	Messages are stored in SQLite
-
-•	Recent conversation history is injected into the prompt builder
-
-•	Enables multi-turn contextual conversations
-
-Author
-
-Nitisha Naigaonkar | Innomatics Intern
-
-
-
-
+## Author
+Nitisha N
+GitHub: https://github.com/Nitisha-N
